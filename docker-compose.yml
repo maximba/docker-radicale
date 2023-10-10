@@ -5,7 +5,9 @@ version: '3.7'
 
 services:
   radicale:
-    image: tomsquest/docker-radicale
+    build:
+        context: .
+    image: maximba/radicale:latest
     container_name: radicale
     ports:
       - 127.0.0.1:5232:5232
@@ -31,4 +33,4 @@ services:
       retries: 3
     restart: unless-stopped
     volumes:
-      - ./data:/data
+      - /var/radicale/data:/data

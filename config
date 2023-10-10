@@ -28,7 +28,7 @@ hosts = 0.0.0.0:5232
 #timeout = 30
 
 # SSL flag, enable HTTPS protocol
-#ssl = False
+ssl = False
 
 # SSL certificate path
 #certificate = /etc/ssl/radicale.cert.pem
@@ -44,25 +44,25 @@ hosts = 0.0.0.0:5232
 [encoding]
 
 # Encoding for responding requests
-#request = utf-8
+request = utf-8
 
 # Encoding for storing local collections
-#stock = utf-8
+stock = utf-8
 
 
 [auth]
 
 # Authentication method
 # Value: none | htpasswd | remote_user | http_x_remote_user
-#type = none
+type = http_x_remote_user
 
 # Htpasswd filename
-#htpasswd_filename = /etc/radicale/users
+htpasswd_filename = /data/users
 
 # Htpasswd encryption method
 # Value: plain | bcrypt | md5
 # bcrypt requires the installation of radicale[bcrypt].
-#htpasswd_encryption = md5
+htpasswd_encryption = md5
 
 # Incorrect authentication delay (seconds)
 #delay = 1
@@ -110,7 +110,7 @@ filesystem_folder = /data/collections
 
 # Threshold for the logger
 # Value: debug | info | warning | error | critical
-#level = warning
+level = error
 
 # Don't include passwords in logs
 #mask_passwords = True
